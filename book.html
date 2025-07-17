@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Pass | Garba 2025</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h2>🎟 Book Your Garba Pass</h2>
+    <form action="pass.html" method="GET">
+      <label>Full Name:</label>
+      <input type="text" name="name" required />
+
+      <label>Mobile Number:</label>
+      <input type="tel" name="mobile" required />
+
+      <label>Email:</label>
+      <input type="email" name="email" required />
+
+      <label>Select Days:</label>
+      <select name="days" required>
+        <option value="all">All 9 Days</option>
+        <option value="day1">Day 1 Only</option>
+        <option value="day1">Day 2 Only</option>
+        <option value="day1">Day 3 Only</option>
+        <option value="day1">Day 4 Only</option>
+        <option value="day1">Day 5 Only</option>
+        <option value="day1">Day 6 Only</option>
+        <option value="day1">Day 7 Only</option>
+        <option value="day1">Day 8 Only</option>
+        <option value="day1">Day 9 Only</option>
+        <option value="weekend">Weekend Only</option>
+      </select>
+
+      <label>Upload Aadhar Card (optional):</label>
+      <input type="file" accept="image/*,.pdf" />
+
+      <button type="submit" class="btn">Generate Pass</button>
+    </form>
+  </div>
+</body>
+</html>

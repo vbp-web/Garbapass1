@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Garba Pass</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <h2>✅ Your Garba Pass</h2>
+    <p>Show this pass at entry gate</p>
+    <div id="qrcode"></div>
+    <p id="pass-details"></p>
+  </div>
+  <h3>Your Animated Garba Pass</h3>
+
+<
+
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("name");
+    const mobile = params.get("mobile");
+    const email = params.get("email");
+    const days = params.get("days");
+
+    const passText = `Name: ${name}, Mobile: ${mobile}, Days: ${days}`;
+    document.getElementById("pass-details").innerText = passText;
+
+    QRCode.toCanvas(document.getElementById('qrcode'), passText, function (error) {
+      if (error) console.error(error);
+    });
+  </script>
+</body>
+</html>

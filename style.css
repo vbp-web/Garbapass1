@@ -1,0 +1,219 @@
+/* === Global Styles === */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to top right, #ffeaa7, #fab1a0);
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  overflow-x: hidden;
+  animation: bg-glow 8s ease-in-out infinite alternate;
+}
+
+@keyframes bg-glow {
+  0% { background-position: top left; }
+  100% { background-position: bottom right; }
+}
+
+h1, h2 {
+  color: #d63031;
+  animation: text-glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes text-glow {
+  from {
+    text-shadow: 0 0 8px #fff, 0 0 15px #ff7675;
+  }
+  to {
+    text-shadow: 0 0 16px #ff9f43, 0 0 25px #d63031;
+  }
+}
+
+/* === Container === */
+.container {
+  max-width: 420px;
+  margin: auto;
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  transform-style: preserve-3d;
+  animation: float-card 3s ease-in-out infinite;
+  transition: transform 0.5s;
+}
+
+.container:hover {
+  transform: rotateY(5deg) rotateX(5deg) scale(1.01);
+}
+
+@keyframes float-card {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* === Buttons === */
+.btn {
+  background-color: #e17055;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 15px;
+  transition: 0.4s ease;
+  box-shadow: 0 5px 15px rgba(255, 118, 117, 0.4);
+}
+
+.btn:hover {
+  background-color: #d63031;
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #ff7675;
+}
+
+/* === Inputs & Labels === */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+  background: #fffefc;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #e17055;
+  box-shadow: 0 0 8px rgba(255, 118, 117, 0.4);
+  transform: scale(1.02);
+}
+
+label {
+  font-weight: bold;
+  float: left;
+  margin-top: 10px;
+  color: #444;
+}
+
+/* === Hero Section (Index Page Style) === */
+.hero {
+  padding: 40px 20px;
+  text-align: center;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff8f0,
+    #fff8f0 10px,
+    #ffd6d6 10px,
+    #ffd6d6 20px
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.8rem;
+  color: #d6249f;
+  margin-bottom: 10px;
+}
+
+.hero .sub {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.icon {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+.hero h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buy-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: linear-gradient(90deg, #6a11cb, #fc6076);
+  color: white;
+  font-weight: bold;
+  border-radius: 40px;
+  text-decoration: none;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(252, 96, 118, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.buy-btn:hover {
+  transform: scale(1.05);
+}
+
+.socials {
+  margin-top: 40px;
+}
+
+.socials a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  margin: 0 10px;
+  color: #d6249f;
+  transition: transform 0.3s ease;
+}
+
+.socials a:hover {
+  transform: scale(1.2);
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* === Responsive Styles === */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+  .container {
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transform: none;
+  }
+  .btn, .buy-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  .btn, .buy-btn {
+    font-size: 0.95rem;
+    padding: 10px 16px;
+  }
+  input, select {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .container:hover {
+    transform: none;
+  }
+}
